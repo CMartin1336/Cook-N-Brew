@@ -13,7 +13,7 @@ function fetchData(requestUrl, requestType) {
         } else if (requestType === "cards") {
             displayRecipeCards(data);
         } else if (requestType === "recipe") {
-            displayRecipie(data);
+            displayRecipe(data);
         } else {
             // create brewery function to display results in the modal
         }
@@ -44,7 +44,7 @@ function displayRecipeCards(catID) {
     var card = urlCards + catID;
 }
 
-function displayRecipie(recipeID) {
+function displayRecipe(recipeID) {
     // Build URL with recipe.  Parm is the ID of whatever the user clicked, for example
     // https://www.themealdb.com/api/json/v1/1/lookup.php?i=52777
     var recipe = urlRecipe + recipeID;
@@ -54,6 +54,9 @@ function displayRecipie(recipeID) {
 console.log("Am I here")
 fetchData(urlCategories, "category");
 
-
+var selectedRecipe = document.querySelector("#recipeCard")
 // Need an event listener on the category container
+selectedRecipe.addEventListener('click', displayRecipeCards);
+
+
 // Need another event listener on the 9x9 container
