@@ -1,0 +1,12 @@
+.appDescription {
+   text-align: center;
+}
+
+.logo {
+    display: inline-block;
+    height: 100%;
+}
+
+.logo>img {
+    vertical-align: middle
+}
