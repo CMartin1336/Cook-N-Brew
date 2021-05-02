@@ -14,18 +14,25 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="nav-wrapper">
-                <a href="#"><img src="./assets/images/logo.png" alt="cook-n-brew logo" /></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="#">Brewery Modal Button</a></li>
-                </ul>
+    <nav>
+        <div class="nav-wrapper">
+            <img class="brand-logo logo" src="./assets/images/logo2.png" alt="cook-n-brew logo" />
+            <ul id="nav-mobile" class="right">
+                <li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Find a Brewery</a></li>
+            </ul>
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                  <h4>Modal Header</h4>
+                  <p>A bunch of text</p>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                </div>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
     <div class="appDescription">
-        <h2>Blah blah blah</h2>
+        <h2>Here is where we will write what this application is and how it is intended to be used.</h2>
     </div>
     <div class="foodContainer row">
         <!--This is where the food categories will go on the left side-->
@@ -42,9 +49,7 @@
                 <div class="row">
                     <div class="col s12 m7">
                         <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
+                            <div class="card-image" id="card0">
                             </div>
                             <div class="card-content">
                                 <p>I am a very simple card. I am good at containing small bits of information.
@@ -60,9 +65,7 @@
                 <div class="row">
                     <div class="col s12 m7">
                         <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
+                            <div class="card-image" id="card1">
                             </div>
                             <div class="card-content">
                                 <p>I am a very simple card. I am good at containing small bits of information.
@@ -78,9 +81,7 @@
                 <div class="row">
                     <div class="col s12 m7">
                         <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
+                            <div class="card-image" id="card2">
                             </div>
                             <div class="card-content">
                                 <p>I am a very simple card. I am good at containing small bits of information.
@@ -96,9 +97,7 @@
                 <div class="row">
                     <div class="col s12 m7">
                         <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
+                            <div class="card-image" id="card3">
                             </div>
                             <div class="card-content">
                                 <p>I am a very simple card. I am good at containing small bits of information.
@@ -114,9 +113,7 @@
                 <div class="row">
                     <div class="col s12 m7">
                         <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
+                            <div class="card-image" id="card4">
                             </div>
                             <div class="card-content">
                                 <p>I am a very simple card. I am good at containing small bits of information.
@@ -132,9 +129,7 @@
                 <div class="row">
                     <div class="col s12 m7">
                         <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
+                            <div class="card-image"  id="card5">
                             </div>
                             <div class="card-content">
                                 <p>I am a very simple card. I am good at containing small bits of information.
@@ -150,9 +145,7 @@
                 <div class="row">
                     <div class="col s12 m7">
                         <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
+                            <div class="card-image" id="card6">
                             </div>
                             <div class="card-content">
                                 <p>I am a very simple card. I am good at containing small bits of information.
@@ -168,9 +161,7 @@
                 <div class="row">
                     <div class="col s12 m7">
                         <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
+                            <div class="card-image" id="card7">
                             </div>
                             <div class="card-content">
                                 <p>I am a very simple card. I am good at containing small bits of information.
@@ -186,9 +177,7 @@
                 <div class="row">
                     <div class="col s12 m7">
                         <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
+                            <div class="card-image" id="card8">
                             </div>
                             <div class="card-content">
                                 <p>I am a very simple card. I am good at containing small bits of information.
@@ -200,6 +189,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>        
+    </div>                
 <!-- container for entire recipe -->
 
 
