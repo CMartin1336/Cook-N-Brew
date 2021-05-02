@@ -75,3 +75,8 @@ fetchData(urlCards + "seafood", "cards");
 
 // Need an event listener on the category container
 // Need another event listener on the 9x9 container
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems,);
+  });
