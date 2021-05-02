@@ -38,10 +38,23 @@ function buildCategories(data) {
 }
 
 function displayRecipeCards(catID) {
-    // Build URL with category user clicked on as the c=xxxxxx parm, for example
-    // https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
-    // Randomly select 9
-    var card = urlCards + catID;
+    console.log("In displayRecipeCards");
+
+    for (var i=0; i<9; i++) {
+
+        var card = document.getElementById("card" + i.toString());
+
+        var img = document.createElement('img');
+        img.setAttribute("src", data.meals[i].strMealThumb);
+        img.setAttribute("alt", data.meals[i].strMeal);
+        card.appendChild(img);
+
+        var span = document.createElement('span');
+        span.setAttribute("class", "card-title");
+        span.textContent = data.meals[i].strMeal;
+        card.appendChild(span);
+
+    }
 }
 
 function displayRecipie(recipeID) {
