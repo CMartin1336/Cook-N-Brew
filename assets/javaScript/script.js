@@ -3,8 +3,16 @@ var urlBreweries = "https://api.openbrewerydb.org/breweries/search?query=vancouv
 var urlCards = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
 var urlRecipe = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
 
+
+
+// Special Note!  For the card display I temporaily have it hard coded to seafood.
+// This will enable Rudy and Christian to have some data to work with until 
+// we get the listeners set up.   ~Tami.
+
+
+
 function fetchData(requestUrl, requestType) {
-    console.log(requestUrl);
+    //console.log(requestUrl);
     fetch(requestUrl)
     .then(function(response) { return response.json() })
     .then(function(data) { 
@@ -21,7 +29,7 @@ function fetchData(requestUrl, requestType) {
 }
 
 function buildCategories(data) {
-    console.log(data);
+
     for (var i=0; i<14; i++) {
 
         var p = document.createElement('p');
@@ -33,12 +41,10 @@ function buildCategories(data) {
         img.setAttribute("data-category", data.categories[i].idCategory);
         img.setAttribute("alt", data.categories[i].strCategory)
         catContainer.appendChild(img);
-
     }
 }
 
-function displayRecipeCards(catID) {
-    console.log("In displayRecipeCards");
+function displayRecipeCards(data) {
 
     for (var i=0; i<9; i++) {
 
@@ -64,9 +70,8 @@ function displayRecipie(recipeID) {
 }
 
 // Main: Initial page displayed to user.  Should default page be Beef?
-console.log("Am I here")
 fetchData(urlCategories, "category");
-
+fetchData(urlCards + "seafood", "cards");
 
 // Need an event listener on the category container
 // Need another event listener on the 9x9 container
