@@ -1,14 +1,12 @@
 var urlCategories = "https://www.themealdb.com/api/json/v1/1/categories.php";
 var urlBreweries = "https://api.openbrewerydb.org/breweries/search?query=vancouver";
 var urlCards = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
-var urlRecipe = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
-
+var urlRecipe = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
 
 
 // Special Note!  For the card display I temporaily have it hard coded to seafood.
 // This will enable Rudy and Christian to have some data to work with until 
 // we get the listeners set up.   ~Tami.
-
 
 
 function fetchData(requestUrl, requestType) {
@@ -40,12 +38,23 @@ function buildCategories(data) {
         img.setAttribute("src", data.categories[i].strCategoryThumb);
         img.setAttribute("data-category", data.categories[i].idCategory);
         img.setAttribute("alt", data.categories[i].strCategory)
+        img.setAttribute("class", "category");
         catContainer.appendChild(img);
+
     }
+    var imageEl = document.querySelectorAll(".category");
+    imageEl.forEach(function (image){
+        image.addEventListener("click", function (event){
+            event.preventDefault()
+            var ingredient = event.target.getAttribute("alt")
+            displayRecipe(ingredient)
+        })
+    })
 }
 
 function displayRecipeCards(data) {
-
+    
+    
     for (var i=0; i<9; i++) {
 
         var card = document.getElementById("card" + i.toString());
@@ -63,23 +72,20 @@ function displayRecipeCards(data) {
     }
 }
 
+
 function displayRecipe(recipeID) {
     // Build URL with recipe.  Parm is the ID of whatever the user clicked, for example
     // https://www.themealdb.com/api/json/v1/1/lookup.php?i=52777
-    var recipe = urlRecipe + recipeID;
+    var recipe = urlRecipe + recipeID; 
+    console.log(recipe)
+    //fetchData(recipe, "cards") 
 }
 
 // Main: Initial page displayed to user.  Should default page be Beef?
 fetchData(urlCategories, "category");
-<<<<<<< HEAD
-
-var selectedRecipe = document.querySelector("#recipeCard")
-=======
 fetchData(urlCards + "seafood", "cards");
 
->>>>>>> 17fee34264957ff7098ea75ffc3bfe2be123d082
-// Need an event listener on the category container
-selectedRecipe.addEventListener('click', displayRecipeCards);
+
 
 
 // Need another event listener on the 9x9 container
