@@ -1,8 +1,7 @@
 var urlCategories = "https://www.themealdb.com/api/json/v1/1/categories.php";
 var urlBreweries = "https://api.openbrewerydb.org/breweries/search?query=vancouver";
 var urlCards = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
-var urlRecipe = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
-
+var urlRecipe = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
 
 
 // Special Note!  For the card display I temporaily have it hard coded to seafood.
@@ -10,27 +9,52 @@ var urlRecipe = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
 // we get the listeners set up.   ~Tami.
 
 
-
 function fetchData(requestUrl, requestType) {
-     console.log(requestUrl);
-     fetch(requestUrl)
-          .then(function (response) { return response.json() })
-          .then(function (data) {
-               if (requestType === "category") {
-                    buildCategories(data);
-               } else if (requestType === "cards") {
-                    displayRecipeCards(data);
-               } else if (requestType === "recipe") {
-                    displayRecipie(data);
-               } else {
-                    // create brewery function to display results in the modal
-               }
-          })
+    //console.log(requestUrl);
+    fetch(requestUrl)
+    .then(function(response) { return response.json() })
+    .then(function(data) { 
+        if (requestType === "category") {
+            buildCategories(data);
+        } else if (requestType === "cards") {
+            displayRecipeCards(data);
+        } else if (requestType === "recipe") {
+            displayRecipe(data);
+        } else {
+            // create brewery function to display results in the modal
+        }
+    })
 }
 
 function buildCategories(data) {
+    for (var i=0; i<14; i++) {
 
-     for (var i = 0; i < 14; i++) {
+        var p = document.createElement('p');
+        p.textContent = data.categories[i].strCategory;
+        catContainer.appendChild(p);
+        
+        var img = document.createElement('img');
+        img.setAttribute("src", data.categories[i].strCategoryThumb);
+        img.setAttribute("data-category", data.categories[i].idCategory);
+        img.setAttribute("alt", data.categories[i].strCategory)
+        img.setAttribute("class", "category");
+        catContainer.appendChild(img);
+
+    }
+    var imageEl = document.querySelectorAll(".category");
+    imageEl.forEach(function (image){
+        image.addEventListener("click", function (event){
+            event.preventDefault()
+            var ingredient = event.target.getAttribute("alt")
+            displayRecipe(ingredient)
+        })
+    })
+}
+
+function displayRecipeCards(data) {
+    
+    
+    for (var i=0; i<9; i++) {
 
           var p = document.createElement('p');
           p.textContent = data.categories[i].strCategory;
@@ -67,6 +91,7 @@ function displayRecipeCards(data) {
           cardContent.appendChild(span);
      }
 }
+
 
 function displayRecipie(data) {
 
@@ -122,6 +147,7 @@ fetchData(urlCategories, "category");
 fetchData(urlCards + "seafood", "cards");
 fetchData(urlRecipe + "52773", "recipe");
 
+// Need another event listener on the 9x9 container
 // --------------------------------------------------------------------
 // Event Listeners / Modal
 // --------------------------------------------------------------------
