@@ -28,27 +28,16 @@ function fetchData(requestUrl, requestType) {
 }
 
 //function for fetching the open brewery city that the user inputs
-// function fetchData(userCity)
-// fetch(userCity)
-//   .then(response => response.json())
-//   .then(data => console.log(data));
-//     if (requestType === "modal-content") {
-//       var modalEl = document.createElement("li")
-//     }
-const myCity = new city();
+function fetchData(_requestUrl, requestType){
+fetch(userCity)
+  .then(response => response.json())
+  .then(data => console.log(data));
+}
+      var modalEl = document.createElement("li");
+      p.textContent = data.categories[i].strCategory;
+      div.modal-container.appendChild(p);
+    
 
-const myRequest = new Request('flowers.jpg', {
-  method: 'GET',
-  headers: myHeaders,
-  mode: 'cors',
-  cache: 'default',
-});
-
-fetch(myRequest)
-  .then(response => response.blob())
-  .then(myBlob => {
-    myImage.src = URL.createObjectURL(myBlob);
-  });
 
 function buildCategories(data) {
     for (var i=0; i<14; i++) {
