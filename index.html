@@ -154,19 +154,30 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col m10" id="recipeContainer">
-            <h3 id="recipeName"></h3>
-            <img src="" id="recipeImg">
-            <div id="ingredients">
-            </div>
-            <div id="instructions">
-            </div>
-            <div id="youtube">
-                <a href="" id="youtubelink"></a>
-            </div>
-        </div>
-    </div>
+            <!-- container for entire recipe -->
+            <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4"><h3>Recipe Name</h3><i class="material-icons right">more_vert</i></span>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">Recipe Name<i class="material-icons right">close</i></span>
+                  <div>
+                    <article>
+                        <ul>
+                            <li>cooking time</li>
+                            <li>svg size</li>
+                        </ul>
+                        <p id="ingredients">Ingredients</p>
+                        <p id="cookingInstructions">Instructions</p>
+                    </article>
+                  <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                </div>
+                </div>
+              </div>
+      
 
     <script type="text/javascript" src="./assets/javaScript/materialize.min.js"></script>
     <script src='./assets/javaScript/script.js'></script>
