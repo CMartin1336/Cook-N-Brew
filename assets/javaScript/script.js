@@ -77,8 +77,7 @@ function displayRecipe(recipeID) {
     // Build URL with recipe.  Parm is the ID of whatever the user clicked, for example
     // https://www.themealdb.com/api/json/v1/1/lookup.php?i=52777
     var recipe = urlRecipe + recipeID; 
-    console.log(recipe)
-    //fetchData(recipe, "cards") 
+    fetchData(recipe, "cards") 
 }
 
 // Main: Initial page displayed to user.  Should default page be Beef?
