@@ -2,239 +2,135 @@
 <html lang="en">
 
 <head>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- font awesome icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-        crossorigin="anonymous" />
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="./assets/css/materialize.min.css" media="screen,projection" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cook-N-Brew</title>
-</head>
+                    </div>
 
-<body>
-    <header>
-        <nav>
-            <div class="nav-wrapper">
-                <a href="#"><img src="./assets/images/logo.png" alt="cook-n-brew logo" /></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="#">Brewery Modal Button</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <div class="appDescription">
-        <h2>Blah blah blah</h2>
-    </div>
-    <div class="foodContainer row">
-        <!--This is where the food categories will go on the left side-->
-        <div id="catContainer" class="col s3">
+                    <div class="col s12 m3">
+                         <div class="card medium">
+                              <div class="card-image" id="card1">
+                              </div>
+                              <div class="card-content" id="content1">
+                                   
+                              </div>
+                              <div class="card-action">
+                                   <button>Click here for this recipe</button>
+                              </div>
+                         </div>
+                    </div>
 
-        </div>
-        <!-- Recipe container -->
-        <div id="recipeContainer" class="col s9">
+                    <div class="col s12 m3">
+                         <div class="card medium">
+                              <div class="card-image" id="card2">
+                              </div>
+                              <div class="card-content" id="content2">
+                                  
+                              </div>
+                              <div class="card-action">
+                                   <button>Click here for this recipe</button>
+                              </div>
+                         </div>
+                    </div>
+               </div>
 
-            <!-- Below is for the recipe title and after will be the recipe instructions -->
-            <header id="selectedRecipe">Example</header>
-            <div id="recipeInstructions">
-                <!-- card sections for each recipe 1-->
-                <div class="row">
-                    <div class="col s12 m7">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
-                            </div>
-                            <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.</p>
-                            </div>
-                            <div class="card-action">
-                                <button>Click here for this recipe</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- card sections for each recipe 2-->
-                <div class="row">
-                    <div class="col s12 m7">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
-                            </div>
-                            <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.</p>
-                            </div>
-                            <div class="card-action">
-                                <button>Click here for this recipe</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- card sections for each recipe 3-->
-                <div class="row">
-                    <div class="col s12 m7">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
-                            </div>
-                            <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.</p>
-                            </div>
-                            <div class="card-action">
-                                <button>Click here for this recipe</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- card sections for each recipe 4-->
-                <div class="row">
-                    <div class="col s12 m7">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
-                            </div>
-                            <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.</p>
-                            </div>
-                            <div class="card-action">
-                                <button>Click here for this recipe</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- card sections for each recipe 5-->
-                <div class="row">
-                    <div class="col s12 m7">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
-                            </div>
-                            <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.</p>
-                            </div>
-                            <div class="card-action">
-                                <button>Click here for this recipe</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- card sections for each recipe 6-->
-                <div class="row">
-                    <div class="col s12 m7">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
-                            </div>
-                            <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.</p>
-                            </div>
-                            <div class="card-action">
-                                <button>Click here for this recipe</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- card sections for each recipe 7-->
-                <div class="row">
-                    <div class="col s12 m7">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
-                            </div>
-                            <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.</p>
-                            </div>
-                            <div class="card-action">
-                                <button>Click here for this recipe</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- card sections for each recipe 8-->
-                <div class="row">
-                    <div class="col s12 m7">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
-                            </div>
-                            <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.</p>
-                            </div>
-                            <div class="card-action">
-                                <button>Click here for this recipe</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- card sections for each recipe 9-->
-                <div class="row">
-                    <div class="col s12 m7">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
-                            </div>
-                            <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.</p>
-                            </div>
-                            <div class="card-action">
-                                <button>Click here for this recipe</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- container for entire recipe -->
-            <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                  <img class="activator" src="">
-                </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4"><h3>Recipe Name</h3><i class="material-icons right">more_vert</i></span>
-                  <a href="" class="recipeVideoBtn"><i class="fab fa-youtube"></i></a>
-                </div>
-                <div class="card-reveal">
-                  <span class="card-title grey-text text-darken-4">Recipe Name<i class="material-icons right">close</i></span>
-                  <div>
-                    <article>
-                        <ul>
-                            <li>cooking time</li>
-                            <li>svg size</li>
-                        </ul>
-                        <p id="ingredients">Ingredients</p>
-                        <p id="cookingInstructions">Instructions</p>
-                    </article>
-                  <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-                </div>
-              </div>
-        
 
-        </div>
-        <!--JavaScript at end of body for optimized loading-->
-        <script type="text/javascript" src="./assets/javaScript/materialize.min.js"></script>
-        <script src='./assets/javaScript/script.js'></script>
+               <div class="row">
+                    <div class="col s12 m3">
+                         <div class="card medium">
+                              <div class="card-image" id="card3">
+                              </div>
+                              <div class="card-content" id="content3"> 
+                                  
+                              </div>
+                              <div class="card-action">
+                                   <button>Click here for this recipe</button>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col s12 m3">
+                         <div class="card medium">
+                              <div class="card-image" id="card4">
+                              </div>
+                              <div class="card-content" id="content4">
+                                  
+                              </div>
+                              <div class="card-action">
+                                   <button>Click here for this recipe</button>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col s12 m3">
+                         <div class="card medium">
+                              <div class="card-image" id="card5">
+                              </div>
+                              <div class="card-content" id="content5">
+                                  
+                              </div>
+                              <div class="card-action">
+                                   <button>Click here for this recipe</button>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+
+
+               <div class="row">
+                    <div class="col s12 m3">
+                         <div class="card medium">
+                              <div class="card-image" id="card6">
+                              </div>
+                              <div class="card-content" id="content6">
+                                  
+                              </div>
+                              <div class="card-action">
+                                   <button>Click here for this recipe</button>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col s12 m3">
+                         <div class="card medium">
+                              <div class="card-image" id="card7">
+                              </div>
+                              <div class="card-content" id="content7">
+                                  
+                              </div>
+                              <div class="card-action">
+                                   <button>Click here for this recipe</button>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col s12 m3">
+                         <div class="card medium">
+                              <div class="card-image" id="card8">
+                              </div>
+                              <div class="card-content" id="content8">
+                                  
+                              </div>
+                              <div class="card-action">
+                                   <button>Click here for this recipe</button>
+                              </div>
+                         </div>
+                    </div>
+
+               <h3 id="recipeName"></h3>
+               <img src="" id="recipeImg">
+
+               <div id="ingredients">
+               </div>
+
+               <div id="instructions">
+               </div>
+
+               <div id="youtube">
+                    <a href="" id="youtubelink"></a>
+               </div>
+
+          </div>
+     </div>
+     
+     <script type="text/javascript" src="./assets/javaScript/materialize.min.js"></script>
+     <script src='./assets/javaScript/script.js'></script>
 </body>
-
 </html>
