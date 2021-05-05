@@ -2,7 +2,8 @@ var urlCategories = "https://www.themealdb.com/api/json/v1/1/categories.php";
 var urlBreweries = "https://api.openbrewerydb.org/breweries/search?query=vancouver";
 var urlCards = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
 var urlRecipe = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
-
+var userCity = "https://api.openbrewerydb.org/breweries?by_city=seattle"
+var cityEl = document.querySelector(".modal-content");
 
 // Special Note!  For the card display I temporaily have it hard coded to seafood.
 // This will enable Rudy and Christian to have some data to work with until 
@@ -25,6 +26,29 @@ function fetchData(requestUrl, requestType) {
         }
     })
 }
+
+//function for fetching the open brewery city that the user inputs
+// function fetchData(userCity)
+// fetch(userCity)
+//   .then(response => response.json())
+//   .then(data => console.log(data));
+//     if (requestType === "modal-content") {
+//       var modalEl = document.createElement("li")
+//     }
+const myCity = new city();
+
+const myRequest = new Request('flowers.jpg', {
+  method: 'GET',
+  headers: myHeaders,
+  mode: 'cors',
+  cache: 'default',
+});
+
+fetch(myRequest)
+  .then(response => response.blob())
+  .then(myBlob => {
+    myImage.src = URL.createObjectURL(myBlob);
+  });
 
 function buildCategories(data) {
     for (var i=0; i<14; i++) {
