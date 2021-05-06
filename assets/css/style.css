@@ -14,3 +14,7 @@
 .modal {
     color: black;
 }
+
+#catContainer img {
+    width: 100%;
+}
