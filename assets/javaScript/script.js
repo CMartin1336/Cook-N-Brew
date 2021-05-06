@@ -29,17 +29,17 @@ function fetchData(requestUrl, requestType) {
     })
 }
 
-//function for fetching the open brewery city that the user inputs
-fetch(userCity)
-  .then(response => response.json())
-  .then(data => console.log(data));
-    //   var modalEl = document.createElement("li");
-    //   div.modal-container.appendChild(p);
-    citySearch.addEventListener = function () {
-    var searchTerm = txtSearch.value;
-    var url = 'https://api.openbrewerydb.org/breweries?by_city=${searchTerm}';
-    console.log(url)
-}
+// //function for fetching the open brewery city that the user inputs
+// fetch(userCity)
+//   .then(response => response.json())
+//   .then(data => console.log(data));
+//     //   var modalEl = document.createElement("li");
+//     //   div.modal-container.appendChild(p);
+//     citySearch.addEventListener = function () {
+//     var searchTerm = txtSearch.value;
+//     var url = 'https://api.openbrewerydb.org/breweries?by_city=${searchTerm}';
+//     console.log(url)
+// }
 
    
     
