@@ -5,6 +5,7 @@ var urlRecipe = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
 var userCity = "https://api.openbrewerydb.org/breweries?by_city=seattle"
 var citySearch = document.getElementById(""); //Add the element object in quotes to reference once the modal is complete.
 // const citySearchBtn = document.querySelector('input[type="search"]');
+var breweryReturn = "https://api.openbrewerydb.org/breweries?page=5"; // Shows 5 local breweries based on the user input city.
 
 // Special Note!  For the card display I temporaily have it hard coded to seafood.
 // This will enable Rudy and Christian to have some data to work with until 
@@ -34,9 +35,9 @@ fetch(userCity)
   .then(data => console.log(data));
     //   var modalEl = document.createElement("li");
     //   div.modal-container.appendChild(p);
-    citySearch.addEventListener = function (search) {
-    var searchCity = txtSearch.value;
-    const url = 'https://api.openbrewerydb.org/breweries?by_city=${searchTerm}';
+    citySearch.addEventListener = function () {
+    var searchTerm = txtSearch.value;
+    var url = 'https://api.openbrewerydb.org/breweries?by_city=${searchTerm}';
     console.log(url)
 }
 
