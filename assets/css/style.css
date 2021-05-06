@@ -1,16 +1,24 @@
 .appDescription {
-   text-align: center;
-}
-
-.logo {
-    display: inline-block;
-    height: 100%;
-}
-
-.logo>img {
-    vertical-align: middle;
-}
-
-.modal {
-    color: black;
-}
+     text-align: center;
+  }
+  
+  .logo {
+      display: inline-block;
+      height: 100%;
+  }
+  
+  .logo>img {
+      vertical-align: middle;
+  }
+  
+  .modal {
+      color: black;
+  }
+  
+  #catContainer img {
+      width: 100%;
+  }
+  
+  .cityInput {
+      background-color: lightgray;
+  }
