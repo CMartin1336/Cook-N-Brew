@@ -3,7 +3,8 @@ var urlBreweries = "https://api.openbrewerydb.org/breweries/search?query=vancouv
 var urlCards = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
 var urlRecipe = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
 var userCity = "https://api.openbrewerydb.org/breweries?by_city=seattle"
-var cityEl = document.querySelector(".modal-content");
+var citySearch = document.getElementById(""); //Add the element object in quotes to reference once the modal is complete.
+// const citySearchBtn = document.querySelector('input[type="search"]');
 
 // Special Note!  For the card display I temporaily have it hard coded to seafood.
 // This will enable Rudy and Christian to have some data to work with until 
@@ -28,14 +29,18 @@ function fetchData(requestUrl, requestType) {
 }
 
 //function for fetching the open brewery city that the user inputs
-function fetchData(_requestUrl, requestType){
 fetch(userCity)
   .then(response => response.json())
   .then(data => console.log(data));
+    //   var modalEl = document.createElement("li");
+    //   div.modal-container.appendChild(p);
+    citySearch.addEventListener = function (search) {
+    var searchCity = txtSearch.value;
+    const url = 'https://api.openbrewerydb.org/breweries?by_city=${searchTerm}';
+    console.log(url)
 }
-      var modalEl = document.createElement("li");
-      p.textContent = data.categories[i].strCategory;
-      div.modal-container.appendChild(p);
+
+   
     
 
 
