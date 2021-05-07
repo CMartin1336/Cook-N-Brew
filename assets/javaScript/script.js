@@ -1,7 +1,9 @@
+var catContainerEl = document.querySelector('#catContainer');  
+var cardContainerEl = document.querySelector('#cardContainer');  
+
 var urlCategories = "https://www.themealdb.com/api/json/v1/1/categories.php";
 var urlBreweries = "https://api.openbrewerydb.org/breweries/search?query=city";
 var urlCards = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
-var urlRecipe = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
 var userCity = "https://api.openbrewerydb.org/breweries?by_city=Seattle"
 var citySearch = document.getElementById("#city"); 
 // var citySearchBtn = document.querySelector('input[type="search"]');
@@ -9,9 +11,9 @@ var breweryReturn = "https://api.openbrewerydb.org/breweries?page=5"; // Shows 5
 var cityList = document.querySelector('th');
 var submitButton = document.getElementById('.waves-effect waves-light btn');
 
+var urlRecipe = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
 
 function fetchData(requestUrl, requestType) {
-    //console.log(requestUrl);
     fetch(requestUrl)
     .then(function(response) { return response.json() })
     .then(function(data) { 
@@ -26,6 +28,7 @@ function fetchData(requestUrl, requestType) {
         }
     })
 }
+
 
 fetch('https://api.openbrewerydb.org/breweries?page=5')
   .then(response => response.json())
@@ -93,57 +96,89 @@ function buildCategories(data) {
             displayRecipe(ingredient)
         })
     })
+function categoryClickHandler(event) {
+     cardContainer.classList.remove("hidden");
+     recipeContainer.classList.add("hidden")
+     var category = event.target.getAttribute('data-category');
+     var requrl = urlCards + category;
+     fetchData(requrl, "cards");
 }
 
-function displayRecipeCards(data) {
-    
-    
-    for (var i=0; i<9; i++) {
+// Handle clicks on recipe cards
+function cardClickHandler(event) {
+     var button = event.target.getAttribute('data-card');
+     var requrl = urlRecipe + button;
+     fetchData(requrl, "recipe");
+}
 
-          var p = document.createElement('p');
-          p.textContent = data.categories[i].strCategory;
-          catContainer.appendChild(p);
+function buildCategories(data) {
 
-          var img = document.createElement('img');
-          img.setAttribute("src", data.categories[i].strCategoryThumb);
-          img.setAttribute("data-category", data.categories[i].idCategory);
-          img.setAttribute("alt", data.categories[i].strCategory)
-          catContainer.appendChild(img);
+     for (var i = 0; i < 14; i++) {
+
+          if (data.categories[i].strCategory !== "Pasta" &&
+                data.categories[i].strCategory !== "Starter" &&
+                data.categories[i].strCategory !== "Vegan" &&
+                data.categories[i].strCategory !== "Breakfast" &&
+                data.categories[i].strCategory !== "Goat") {
+
+               var p = document.createElement('p');
+               p.textContent = data.categories[i].strCategory;
+               catContainer.appendChild(p);
+
+               var img = document.createElement('img');
+               img.setAttribute("src", data.categories[i].strCategoryThumb)
+               img.setAttribute("data-category", data.categories[i].strCategory);
+               catContainer.appendChild(img);
+          }
      }
 }
 
 function displayRecipeCards(data) {
-
+     
      for (var i = 0; i < 9; i++) {
+          
+               // Set the image on each card
+               var img = document.getElementById("img" + i.toString());
+               img.setAttribute("src", data.meals[i].strMealThumb);
+               img.setAttribute("alt", data.meals[i].strMeal);
 
-          // Set the image for each card
-          var card = document.getElementById("card" + i.toString());
-          var img = document.createElement('img');
-          img.setAttribute("src", data.meals[i].strMealThumb);
-          img.setAttribute("alt", data.meals[i].strMeal);
-          card.appendChild(img);
+               // Set the recipe ID on each card
+               var parent = document.getElementById("card" + i.toString()).parentElement;
+               parent.setAttribute("id", data.meals[i].idMeal);
 
-          // Set the recipe ID on each card
-          var parent = document.getElementById("card" + i.toString()).parentElement;
-          parent.setAttribute("id", data.meals[i].idMeal);
-          console.log(parent);
+               // Set the recipe name for each card
+               var span = document.getElementById("cardspan" + i.toString());
+               span.textContent = data.meals[i].strMeal;
 
-          // Set the recipe name for each card
-          var cardContent = document.getElementById("content" + i.toString());
-          var span = document.createElement('span');
-          span.textContent = data.meals[i].strMeal;
-          cardContent.appendChild(span);
+               // Set recipe ID on button
+               var button = document.getElementById("button" + i.toString());
+               button.setAttribute("data-card", data.meals[i].idMeal);
      }
 }
 
+function clearRecipeIngredients(parent) {
+     while (parent.firstChild) {
+          parent.removeChild(parent.firstChild);
+      }
+  }
 
-function displayRecipie(data) {
+function displayRecipe(data) {
 
      mealObj = data.meals[0];
      var measure = [];
      var ingredient = [];
      var i=0;
      var j=0;
+
+     // Clear ingredients
+     var ingredients = document.querySelector('#ingredients');
+     clearRecipeIngredients(ingredients);
+
+     // Hide card container, display recipe container
+     var cardContainer = document.getElementById('cardContainer');
+     var recipeContainer = document.getElementById('recipeContainer');
+     cardContainer.classList.add("hidden");
+     recipeContainer.classList.remove("hidden")
      
      // Display recipe name
      var name = document.getElementById("recipeName");
@@ -156,10 +191,10 @@ function displayRecipie(data) {
      
      // Display ingredients (Loop through object to find them all)
      for (x in mealObj) {
-          if (x.includes("strIngredient") && mealObj[x] !== null  && mealObj[x] !== ""  ) {
-               ingredient[i] = mealObj[x];               
+          if (x.includes("strIngredient") && mealObj[x] !== null  && mealObj[x] !== "" && mealObj[x] !== " "  ) {
+               ingredient[i] = mealObj[x];
                i++;
-          } else if (x.includes("strMeasure") && mealObj[x] !== null  && mealObj[x] !== ""  ) {
+          } else if (x.includes("strMeasure") && mealObj[x] !== null  && mealObj[x] !== ""  && mealObj[x] !== " ") {
                measure[j] = mealObj[x];
                j++;
           }
@@ -171,33 +206,27 @@ function displayRecipie(data) {
           p.textContent = strIngredient;
           ingredients.appendChild(p);
      }
-     // Display instructions
-     var instructions = document.getElementById("instructions");
-     p = document.createElement('p');
-     p.textContent = mealObj.strInstructions;
-     instructions.appendChild(p);
 
-     // Display link to you tube
-     var youtube = document.getElementById("youtubelink");
-     youtube.setAttribute("href", mealObj.strYoutube);    
-     youtube.textContent = mealObj.strYoutube; 
+     // Display instructions
+     var pinstructions = document.getElementById("instructions");
+     pinstructions.textContent = mealObj.strInstructions;
 }
 
+// --------------------------------------------------------------------
+// Main: Display desserts on the way in
+// --------------------------------------------------------------------
 
-// --------------------------------------------------------------------
-// Main: Initial page displayed to user. Hardcoded till we get listener
-// --------------------------------------------------------------------
 fetchData(urlCategories, "category");
-fetchData(urlCards + "seafood", "cards");
-fetchData(urlRecipe + "52773", "recipe");
+fetchData(urlCards + "dessert", "cards");
 
-// Need another event listener on the 9x9 container
-// --------------------------------------------------------------------
-// Event Listeners / Modal
-// --------------------------------------------------------------------
+// Modal for brewery button
 document.addEventListener('DOMContentLoaded', function() {
      var elems = document.querySelectorAll('.modal');
      var instances = M.Modal.init(elems,);
    });
 
-submitButton.addEventListener('click', urlBreweries)
+// Listener for category clicks (i.e. chicken, beef, etc.)
+catContainerEl.addEventListener('click', categoryClickHandler);
+
+// Listener for clicks to display recipes from the cards
+cardContainerEl.addEventListener('click', cardClickHandler)
