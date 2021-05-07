@@ -22,6 +22,11 @@
   .cityInput {
       background-color: lightgray;
   }
+  
   .hidden {
       display: none;
-   }
+  }
+
+  #recipeContainer img {
+       width: 100%;
+  }

@@ -1,20 +1,13 @@
 var catContainerEl = document.querySelector('#catContainer');  
-var cardContainerEl = document.querySelector('#cardContainer');
+var cardContainerEl = document.querySelector('#cardContainer');  
+var breweryContainerEl = document.querySelector('#btnBrewery');  
 
 var urlCategories = "https://www.themealdb.com/api/json/v1/1/categories.php";
-var urlBreweries = "https://api.openbrewerydb.org/breweries/search?query=city";
+var urlBreweries = "https://api.openbrewerydb.org/breweries/search?query=";
 var urlCards = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
 var urlRecipe = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
 
-//Tyler section
-var userCity = "https://api.openbrewerydb.org/breweries?by_city=Seattle"
-var citySearch = document.getElementById("#city"); 
-// var citySearchBtn = document.querySelector('input[type="search"]');
-var breweryReturn = "https://api.openbrewerydb.org/breweries?page=5"; // Shows 5 local breweries based on the user input city.
-var cityList = document.querySelector('th');
-var submitButton = document.getElementById('.waves-effect waves-light btn');
-
-//end of tyler section
+// Fetch data from API's
 function fetchData(requestUrl, requestType) {
     fetch(requestUrl)
     .then(function(response) { return response.json() })
@@ -26,7 +19,7 @@ function fetchData(requestUrl, requestType) {
         } else if (requestType === "recipe") {
             displayRecipe(data);
         } else {
-            // create brewery function to display results in the modal
+            displayBreweries(data);
         }
     })
 }
@@ -47,6 +40,37 @@ function cardClickHandler(event) {
      fetchData(requrl, "recipe");
 }
 
+// Handle clicks for brewery
+function breweryClickHandler(event) {
+     var requrl = urlBreweries + city.value;
+     fetchData(requrl,"brewery");
+}
+
+// Display Breweries in the modal - just one for MVP (more if time)
+function displayBreweries(data) {
+
+     var breweryObj = data[0];    
+
+     for (x in breweryObj) {
+          if (x.includes("name")){
+               var name = breweryObj[x];
+          } else if (x.includes("street")) {
+               var street = breweryObj[x];
+          } else if (x.includes("state")) {
+               var state = breweryObj[x];
+          } else if (x.includes("postal_code")) {
+               var postal_code = breweryObj[x];
+          } else if (x.includes("brewery_type")) {
+               var brewery_type = breweryObj[x];
+          }
+     }
+     var address = street + ", " + state + " " + postal_code;
+     var table = document.getElementById('tblBreweries');
+     table.rows[1].cells[0].innerHTML = name;
+     table.rows[1].cells[1].innerHTML = address;
+}
+
+// Display food categories, omit categories that had a small number of recipes 
 function buildCategories(data) {
 
      for (var i = 0; i < 14; i++) {
@@ -69,11 +93,12 @@ function buildCategories(data) {
      }
 }
 
+// Display recipe cards 3x3
 function displayRecipeCards(data) {
-     
+
      for (var i = 0; i < 9; i++) {
-          
-               // Set the image on each card
+
+          // Set the image on each card
                var img = document.getElementById("img" + i.toString());
                img.setAttribute("src", data.meals[i].strMealThumb);
                img.setAttribute("alt", data.meals[i].strMeal);
@@ -92,12 +117,14 @@ function displayRecipeCards(data) {
      }
 }
 
+// Clear out the container between each recipe view
 function clearRecipeIngredients(parent) {
      while (parent.firstChild) {
           parent.removeChild(parent.firstChild);
       }
   }
 
+// Display the recipe
 function displayRecipe(data) {
 
      mealObj = data.meals[0];
@@ -142,7 +169,6 @@ function displayRecipe(data) {
           p.textContent = strIngredient;
           ingredients.appendChild(p);
      }
-
      // Display instructions
      var pinstructions = document.getElementById("instructions");
      pinstructions.textContent = mealObj.strInstructions;
@@ -151,7 +177,6 @@ function displayRecipe(data) {
 // --------------------------------------------------------------------
 // Main: Display desserts on the way in
 // --------------------------------------------------------------------
-
 fetchData(urlCategories, "category");
 fetchData(urlCards + "dessert", "cards");
 
@@ -166,3 +191,6 @@ catContainerEl.addEventListener('click', categoryClickHandler);
 
 // Listener for clicks to display recipes from the cards
 cardContainerEl.addEventListener('click', cardClickHandler)
+
+// Listener for clicks to display recipes from the cards
+breweryContainerEl.addEventListener('click', breweryClickHandler)
