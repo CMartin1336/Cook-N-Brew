@@ -1,5 +1,5 @@
 var catContainerEl = document.querySelector('#catContainer');  
-var cardContainerEl = document.querySelector('#cardContainer');  
+var cardContainerEl = document.querySelector('#cardContainer');
 
 var urlCategories = "https://www.themealdb.com/api/json/v1/1/categories.php";
 var urlBreweries = "https://api.openbrewerydb.org/breweries/search?query=city";
