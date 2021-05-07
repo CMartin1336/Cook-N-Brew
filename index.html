@@ -2,221 +2,244 @@
 <html lang="en">
 
 <head>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="./assets/css/materialize.min.css" media="screen,projection" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cook-N-Brew</title>
+     <!--Import Google Icon Font-->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!--Import materialize.css-->
+     <link type="text/css" rel="stylesheet" href="./assets/css/materialize.min.css" media="screen,projection" />
+     <link rel="stylesheet" href="./assets/css/style.css" />
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Cook-N-Brew</title>
 </head>
 
 <body>
-    <nav>
-        <div class="nav-wrapper">
-            <img class="brand-logo logo" src="./assets/images/logo2.png" alt="cook-n-brew logo" />
-            <ul id="nav-mobile" class="right">
-                <li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Find a Brewery</a></li>
-            </ul>
-            <div id="modal1" class="modal">
-                <div class="modal-content">
-                    <div class="row">
-                        <form>
-                        <div class="col s12">
-                          <div class="input-field inline">
-                              Put in your city name to find local breweries!
-                            <input class="cityInput" id="city" type="string" placeholder="Seattle">
-                            <a class="waves-effect waves-light btn">Submit</a>
-                          </div>
-                        </div>
-                      </div>
-                    </form>
-                    <table>
-                        <thead>
-                          <tr>
-                              <th>Name</th>
-                              <th>Address</th>
-                          </tr>
-                        </thead>
-                
-                        <tbody class="striped">
-                          <tr>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                        </tbody>
-                      </table>
-                </div>
-                <div class="modal-footer">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-                </div>
-            </div>
-        </div>        
-    </nav>
-    <div class="appDescription">
-        <h2>Here is where we will write what this application is and how it is intended to be used.</h2>
-    </div>
-    <div class="row">
-        <div class="col m2" id="catContainer">
-            <p>Using 2 columns for medium screens</p>
-        </div>
-        <div class="col m10" id="cardContainer">
-            <p>Using 10 columns for medium screen main display area. </p>
-            <div class="row">
-                <div class="col s12 m3">
-                    <div class="card medium">
-                        <div class="card-image" id="card0">
-                        </div>
-                        <div class="card-content" id="content0">
+     <nav>
+          <div class="nav-wrapper">
+               <img class="brand-logo logo" src="./assets/images/logo2.png" alt="cook-n-brew logo" />
+               <ul id="nav-mobile" class="right">
+                    <li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Find a Brewery</a></li>
+               </ul>
+               <div id="modal1" class="modal">
+                    <div class="modal-content">
+                         <div class="row">
+                              <form>
+                                   <div class="col s12">
+                                        <div class="input-field inline">
+                                             Put in your city name to find local breweries!
+                                             <input class="cityInput" id="city" type="string" placeholder="Seattle">
+                                             <a class="waves-effect waves-light btn">Submit</a>
+                                        </div>
+                                   </div>
+                         </div>
+                         </form>
+                         <table>
+                              <thead>
+                                   <tr>
+                                        <th>Name</th>
+                                        <th>Address</th>
+                                   </tr>
+                              </thead>
 
-                        </div>
-                        <div class="card-action">
-                            <button>Click here for this recipe</button>
-                        </div>
+                              <tbody class="striped">
+                                   <tr>
+                                        <td></td>
+                                        <td></td>
+                                   </tr>
+                                   <tr>
+                                        <td></td>
+                                        <td></td>
+                                   </tr>
+                                   <tr>
+                                        <td></td>
+                                        <td></td>
+                                   </tr>
+                                   <tr>
+                                        <td></td>
+                                        <td></td>
+                                   </tr>
+                              </tbody>
+                         </table>
                     </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="card medium">
-                        <div class="card-image" id="card1">
-                        </div>
-                        <div class="card-content" id="content1">
-
-                        </div>
-                        <div class="card-action">
-                            <button>Click here for this recipe</button>
-                        </div>
+                    <div class="modal-footer">
+                         <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
                     </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="card medium">
-                        <div class="card-image" id="card2">
-                        </div>
-                        <div class="card-content" id="content2">
-
-                        </div>
-                        <div class="card-action">
-                            <button>Click here for this recipe</button>
-                        </div>
+               </div>
+          </div>
+     </nav>
+     <div class="appDescription">
+          <h2>Here is where we will write what this application is and how it is intended to be used.</h2>
+     </div>
+     <div class="row">
+          <div class="col m2" id="catContainer">
+          </div>
+          <div class="col m10" id="cardContainer">
+               <div class="row">
+                    <div class="col s12 m3">
+                         <div class="card medium">
+                              <div class="card-image" id="card0">
+                                   <img src="" alt="" id="img0" />
+                              </div>
+                              <div class="card-content" id="content0">
+                                   <span id="cardspan0"></span>
+                              </div>
+                              <div class="card-action" id="action0">
+                                   <button id="button0">Click here for this recipe</button>
+                              </div>
+                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12 m3">
-                    <div class="card medium">
-                        <div class="card-image" id="card3">
-                        </div>
-                        <div class="card-content" id="content3">
-
-                        </div>
-                        <div class="card-action">
-                            <button>Click here for this recipe</button>
-                        </div>
+                    <div class="col s12 m3">
+                         <div class="card medium">
+                              <div class="card-image" id="card1">
+                                   <img src="" alt="" id="img1" />
+                              </div>
+                              <div class="card-content" id="content1">
+                                   <span id="cardspan1"></span>
+                              </div>
+                              <div class="card-action" id="action1">
+                                   <button id="button1">Click here for this recipe</button>
+                              </div>
+                         </div>
                     </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="card medium">
-                        <div class="card-image" id="card4">
-                        </div>
-                        <div class="card-content" id="content4">
-
-                        </div>
-                        <div class="card-action">
-                            <button>Click here for this recipe</button>
-                        </div>
+                    <div class="col s12 m3">
+                         <div class="card medium">
+                              <div class="card-image" id="card2">
+                                   <img src="" alt="" id="img2" />
+                              </div>
+                              <div class="card-content" id="content2">
+                                   <span id="cardspan2"></span>
+                              </div>
+                              <div class="card-action" id="action2">
+                                   <button id="button2">Click here for this recipe</button>
+                              </div>
+                         </div>
                     </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="card medium">
-                        <div class="card-image" id="card5">
-                        </div>
-                        <div class="card-content" id="content5">
-
-                        </div>
-                        <div class="card-action">
-                            <button>Click here for this recipe</button>
-                        </div>
+               </div>
+               <div class="row">
+                    <div class="col s12 m3">
+                         <div class="card medium">
+                              <div class="card-image" id="card3">
+                                   <img src="" alt="" id="img3" />
+                              </div>
+                              <div class="card-content" id="content3">
+                                   <span id="cardspan3"></span>
+                              </div>
+                              <div class="card-action" id="action3">
+                                   <button id="button3">Click here for this recipe</button>
+                              </div>
+                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12 m3">
-                    <div class="card medium">
-                        <div class="card-image" id="card6">
-                        </div>
-                        <div class="card-content" id="content6">
-
-                        </div>
-                        <div class="card-action">
-                            <button>Click here for this recipe</button>
-                        </div>
+                    <div class="col s12 m3">
+                         <div class="card medium">
+                              <div class="card-image" id="card4">
+                                   <img src="" alt="" id="img4" />
+                              </div>
+                              <div class="card-content" id="content4">
+                                   <span id="cardspan4"></span>
+                              </div>
+                              <div class="card-action" id="action4">
+                                   <button id="button4">Click here for this recipe</button>
+                              </div>
+                         </div>
                     </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="card medium">
-                        <div class="card-image" id="card7">
-                        </div>
-                        <div class="card-content" id="content7">
-
-                        </div>
-                        <div class="card-action">
-                            <button>Click here for this recipe</button>
-                        </div>
+                    <div class="col s12 m3">
+                         <div class="card medium">
+                              <div class="card-image" id="card5">
+                                   <img src="" alt="" id="img5" />
+                              </div>
+                              <div class="card-content" id="content5">
+                                   <span id="cardspan5"></span>
+                              </div>
+                              <div class="card-action" id="action5">
+                                   <button id="button5">Click here for this recipe</button>
+                              </div>
+                         </div>
                     </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="card medium">
-                        <div class="card-image" id="card8">
-                        </div>
-                        <div class="card-content" id="content8">
-
-                        </div>
-                        <div class="card-action">
-                            <button>Click here for this recipe</button>
-                        </div>
+               </div>
+               <div class="row">
+                    <div class="col s12 m3">
+                         <div class="card medium">
+                              <div class="card-image" id="card6">
+                                   <img src="" alt="" id="img6" />
+                              </div>
+                              <div class="card-content" id="content6">
+                                   <span id="cardspan6"></span>
+                              </div>
+                              <div class="card-action" id="action6">
+                                   <button id="button6">Click here for this recipe</button>
+                              </div>
+                         </div>
                     </div>
-                </div>
-            </div>
-            <!-- container for entire recipe -->
-            <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                  <img class="activator" src="">
-                </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4"><h3>Recipe Name</h3><i class="material-icons right">more_vert</i></span>
-                </div>
-                <div class="card-reveal">
-                  <span class="card-title grey-text text-darken-4">Recipe Name<i class="material-icons right">close</i></span>
-                  <div>
-                    <article>
-                        <ul>
-                            <li>cooking time</li>
-                            <li>svg size</li>
-                        </ul>
-                        <p id="ingredients">Ingredients</p>
-                        <p id="cookingInstructions">Instructions</p>
-                    </article>
-                  <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-                </div>
-              </div>
-      
+                    <div class="col s12 m3">
+                         <div class="card medium">
+                              <div class="card-image" id="card7">
+                                   <img src="" alt="" id="img7" />
+                              </div>
+                              <div class="card-content" id="content7">
+                                   <span id="cardspan7"></span>
+                              </div>
+                              <div class="card-action" id="action7">
+                                   <button id="button7">Click here for this recipe</button>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="col s12 m3">
+                         <div class="card medium">
+                              <div class="card-image" id="card8">
+                                   <img src="" alt="" id="img8" />
+                              </div>
+                              <div class="card-content" id="content8">
+                                   <span id="cardspan8"></span>
+                              </div>
+                              <div class="card-action" id="action8">
+                                   <button id="button8">Click here for this recipe</button>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
 
-    <script type="text/javascript" src="./assets/javaScript/materialize.min.js"></script>
-    <script src='./assets/javaScript/script.js'></script>
+          <!-- container for entire recipe -->
+          <!-- <div class="card">
+               <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="">
+               </div>
+               <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">
+                         <h3>Recipe Name</h3><i class="material-icons right">more_vert</i>
+                    </span>
+               </div>
+               <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Recipe Name<i class="material-icons right">close</i></span>
+                    <div>
+                         <article>
+                              <ul>
+                                   <li>cooking time</li>
+                                   <li>svg size</li>
+                              </ul>
+                              <p id="ingredients">Ingredients</p>
+                              <p id="cookingInstructions">Instructions</p>
+                         </article>
+                         <p>Here is some more information about this product that is only revealed once clicked on.
+                         </p>
+                    </div>
+               </div>
+          </div> -->
+
+          <div class="col m10 hidden" id="recipeContainer">
+               <h3 id="recipeName"></h3>
+               <img src="" id="recipeImg" />
+               <div id="ingredients"></div>
+               <p id="instructions"></p>
+               <p id="youtube">
+                    <a href="" id="youtubelink"></a>
+               </p>
+          </div>
+
+
+     </div>
+     <script type="text/javascript" src="./assets/javaScript/materialize.min.js"></script>
+     <script src='./assets/javaScript/script.js'></script>
 </body>
 
 </html>
