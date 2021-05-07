@@ -27,26 +27,30 @@
                                    <div class="col s12">
                                         <div class="input-field inline">
                                              Put in your city name to find local breweries!
-                                             <input class="cityInput" id="city" type="string" placeholder="Seattle">
-                                             <a class="waves-effect waves-light btn">Submit</a>
+
+                                             <div id="breweryContainer">
+                                                  <input class="cityInput" id="city" type="string">
+
+                                                  <a class="waves-effect waves-light btn" id="btnBrewery">Submit</a>
+                                             </div>
+
                                         </div>
                                    </div>
                          </div>
                          </form>
-                         <table>
+                         <table id=tblBreweries>
                               <thead>
                                    <tr>
                                         <th>Name</th>
                                         <th>Address</th>
                                    </tr>
                               </thead>
-
                               <tbody class="striped">
                                    <tr>
                                         <td></td>
                                         <td></td>
                                    </tr>
-                                   <tr>
+                                   <!-- <tr>
                                         <td></td>
                                         <td></td>
                                    </tr>
@@ -57,7 +61,7 @@
                                    <tr>
                                         <td></td>
                                         <td></td>
-                                   </tr>
+                                   </tr> -->
                               </tbody>
                          </table>
                     </div>
@@ -199,43 +203,17 @@
                </div>
           </div>
 
-          <!-- container for entire recipe -->
-          <!-- <div class="card">
-               <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="">
-               </div>
-               <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">
-                         <h3>Recipe Name</h3><i class="material-icons right">more_vert</i>
-                    </span>
-               </div>
-               <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Recipe Name<i class="material-icons right">close</i></span>
-                    <div>
-                         <article>
-                              <ul>
-                                   <li>cooking time</li>
-                                   <li>svg size</li>
-                              </ul>
-                              <p id="ingredients">Ingredients</p>
-                              <p id="cookingInstructions">Instructions</p>
-                         </article>
-                         <p>Here is some more information about this product that is only revealed once clicked on.
-                         </p>
+          <div class="col s12 m6">
+               <div class="card blue-grey darken-1 hidden" id="recipeContainer">
+                    <div class="card-content white-text">
+                         <span class="card-title" id="recipeName">Card content</span>
+                         <img src="" id="recipeImg" />
+                         <div id="ingredients"></div>
+                         <br><br>
+                         <p id="instructions"></p>
                     </div>
                </div>
-          </div> -->
-
-          <div class="col m10 hidden" id="recipeContainer">
-               <h3 id="recipeName"></h3>
-               <img src="" id="recipeImg" />
-               <div id="ingredients"></div>
-               <p id="instructions"></p>
-               <p id="youtube">
-                    <a href="" id="youtubelink"></a>
-               </p>
           </div>
-
 
      </div>
      <script type="text/javascript" src="./assets/javaScript/materialize.min.js"></script>
