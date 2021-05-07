@@ -1,13 +1,13 @@
 var urlCategories = "https://www.themealdb.com/api/json/v1/1/categories.php";
-var urlBreweries = "https://api.openbrewerydb.org/breweries/search?query=vancouver";
+var urlBreweries = "https://api.openbrewerydb.org/breweries/search?query=city";
 var urlCards = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
 var urlRecipe = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
-var userCity = "https://api.openbrewerydb.org/breweries?by_city=seattle"
+var userCity = "https://api.openbrewerydb.org/breweries?by_city=Seattle"
 var citySearch = document.getElementById("#city"); 
 // var citySearchBtn = document.querySelector('input[type="search"]');
 var breweryReturn = "https://api.openbrewerydb.org/breweries?page=5"; // Shows 5 local breweries based on the user input city.
-var cityList = document.querySelector('tr');
-var fetchButton = document.getElementById('.btn');
+var cityList = document.querySelector('th');
+var submitButton = document.getElementById('.waves-effect waves-light btn');
 
 
 function fetchData(requestUrl, requestType) {
@@ -23,43 +23,30 @@ function fetchData(requestUrl, requestType) {
             displayRecipe(data);
         } else {
             // create brewery function to display results in the modal
-            function userCity() {
-                var requestUrl = 'https://api.openbrewerydb.org/breweries?by_city=seattle';
-              
-                fetch(requestUrl)
-                  .then(function (response) {
-                    return response.json();
-                  })
-                  .then(function (data) {
-                    for (var i = 0; i < data.length; i++) {
-                      var listItem = document.createElement('td');
-                      listItem.textContent = data[i].strCategory;
-                      cityList.appendChild(listItem);
-                      console.log(listItem)
-                    }
-                  });
-              }
         }
     })
 }
 
+fetch('https://api.openbrewerydb.org/breweries?page=5')
+  .then(response => response.json())
+  .then(data => console.log(data));
 
-// function userCity() {
-//   var requestUrl = 'https://api.openbrewerydb.org/breweries?by_city=Seattle';
+function userCity() {
+  var requestUrl = 'https://api.openbrewerydb.org/breweries?by_city=Seattle';
 
-//   fetch(requestUrl)
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       for (var i = 0; i < data.length; i++) {
-//         var listItem = document.createElement('td');
-//         listItem.textContent = data[i].strCategory;
-//         cityList.appendChild(listItem);
-//         console.log(listItem)
-//       }
-//     });
-// }
+  fetch(requestUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      for (var i = 0; i < data.length; i++) {
+        var listItem = document.createElement('td');
+        listItem.textContent = data[i].strCategory;
+        citySearch.appendChild(listItem);
+        console.log(listItem)
+      }
+    });
+}
 
 
 
@@ -70,7 +57,7 @@ function fetchData(requestUrl, requestType) {
 //     })  
 // }
 
-// //function for fetching the open brewery city that the user inputs
+//function for fetching the open brewery city that the user inputs
 // fetch(userCity, citySearch)
 //   .then(response => response.json())
 //   .then(data => console.log(breweryReturn));
@@ -213,4 +200,4 @@ document.addEventListener('DOMContentLoaded', function() {
      var instances = M.Modal.init(elems,);
    });
 
-   
+submitButton.addEventListener('click', urlBreweries)
