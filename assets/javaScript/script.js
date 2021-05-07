@@ -4,6 +4,9 @@ var cardContainerEl = document.querySelector('#cardContainer');
 var urlCategories = "https://www.themealdb.com/api/json/v1/1/categories.php";
 var urlBreweries = "https://api.openbrewerydb.org/breweries/search?query=city";
 var urlCards = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
+var urlRecipe = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
+
+//Tyler section
 var userCity = "https://api.openbrewerydb.org/breweries?by_city=Seattle"
 var citySearch = document.getElementById("#city"); 
 // var citySearchBtn = document.querySelector('input[type="search"]');
@@ -11,8 +14,7 @@ var breweryReturn = "https://api.openbrewerydb.org/breweries?page=5"; // Shows 5
 var cityList = document.querySelector('th');
 var submitButton = document.getElementById('.waves-effect waves-light btn');
 
-var urlRecipe = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
-
+//end of tyler section
 function fetchData(requestUrl, requestType) {
     fetch(requestUrl)
     .then(function(response) { return response.json() })
@@ -29,73 +31,7 @@ function fetchData(requestUrl, requestType) {
     })
 }
 
-
-fetch('https://api.openbrewerydb.org/breweries?page=5')
-  .then(response => response.json())
-  .then(data => console.log(data));
-
-function userCity() {
-  var requestUrl = 'https://api.openbrewerydb.org/breweries?by_city=Seattle';
-
-  fetch(requestUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      for (var i = 0; i < data.length; i++) {
-        var listItem = document.createElement('td');
-        listItem.textContent = data[i].strCategory;
-        citySearch.appendChild(listItem);
-        console.log(listItem)
-      }
-    });
-}
-
-
-
-// function citySearch() {
-//     fetch(userCity)
-//     .then(function(response) {
-//         return response.json() 
-//     })  
-// }
-
-//function for fetching the open brewery city that the user inputs
-// fetch(userCity, citySearch)
-//   .then(response => response.json())
-//   .then(data => console.log(breweryReturn));
-//       var modalEl = document.createElement("li");
-//       modal-container.appendChild(p);
-//     citySearch.addEventListener = function () {
-//     var searchTerm = txtSearch.value;
-//     var url = 'https://api.openbrewerydb.org/breweries?by_city=${searchTerm}';
-//     console.log(url)
-// }
-
-
-function buildCategories(data) {
-    for (var i=0; i<14; i++) {
-
-        var p = document.createElement('p');
-        p.textContent = data.categories[i].strCategory;
-        catContainer.appendChild(p);
-        
-        var img = document.createElement('img');
-        img.setAttribute("src", data.categories[i].strCategoryThumb);
-        img.setAttribute("data-category", data.categories[i].idCategory);
-        img.setAttribute("alt", data.categories[i].strCategory)
-        img.setAttribute("class", "category");
-        catContainer.appendChild(img);
-
-    }
-    var imageEl = document.querySelectorAll(".category");
-    imageEl.forEach(function (image){
-        image.addEventListener("click", function (event){
-            event.preventDefault()
-            var ingredient = event.target.getAttribute("alt")
-            displayRecipe(ingredient)
-        })
-    })
+// Handle clicks on categories (i.e. beef, chicken, etc.)
 function categoryClickHandler(event) {
      cardContainer.classList.remove("hidden");
      recipeContainer.classList.add("hidden")
