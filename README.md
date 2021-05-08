@@ -11,29 +11,27 @@ This application was built with the idea of wanting to prepare a home-cooked mea
 - The user can either start off by selecting a recipe from the different categories displayed on the left-hand side or search for a brewery through the modal that appears by pressing on the  "**FIND A BREWERY**" button. 
    **_It's up to the user to decide that!_** 😉
   
-![Screenshot of categories](url)
-
-![Screenshot of brewery button nav bar area](url)
+![Screenshot of entire screen](./assets/images/fullScreen.png)
 
 - The user will select a category for the types of recipes they would like to view. This will generate _nine_ different recipe cards with an image that the user can look through and select the one they would like to prepare. 
 
-![Screenshot of the nine different recipe cards](url)
+![Screenshot of the nine different recipe cards](./assets/images/recipeCard.png)
 
 - When the user clicks on a recipe card, the complete recipe will become viewable. The recipe will contain an image of the recipe, ingredient list and instructions.
 
-![Screenshot of an entire recipe](url)
+![Screenshot of an entire recipe](./assets/images/recipeView.png)
 
 - The user can search for a list of breweries in their city by clicking on the "**FIND A BREWERY**" button. When the button is clicked, a modal with an input field will appear instructing the user to enter the city they want to search. 
   
-  ![Screenshot of initial modal](url)
+  ![Screenshot of initial modal](./assets/images/modal.png)
 
 - After the user enters the city and clicks submit, the modal will populate to give the names of three different breweries in their city. 
 
-![Screenshot of populated modal](url)
+![Screenshot of populated modal](./assets/images/seattleModal.png)
 
-- A user will be able to come back to the FIND A BREWERY modal and find the saved cities they have searched for. Making it easy to search for that city again.
+- A user will be able to come back to the FIND A BREWERY modal and find the last city they have searched for. Making it easy to search for that city again.
   
-  ![Screenshot of search history](url)
+  ![Screenshot of search history](./assets/images/seattleHistory.png)
 
 
 ## **Built With**
