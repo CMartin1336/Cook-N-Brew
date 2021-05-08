@@ -1,32 +1,67 @@
+* {
+  font-family: "Rubik", sans-serif;
+}
+span {
+  font-family: "Concert One", cursive;
+  font-size: 16px;
+}
+nav .nav-wrapper {
+  background-color: #b3e5fc;
+}
+nav .nav-wrapper a {
+  background-color: #328db8;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+nav .nav-wrapper a:hover {
+  background-color: #039be5;
+}
+
+.card-action button {
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
+  margin: 8px 4px;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+}
+#catContainer img:hover {
+  background-color: #e1f5fe;
+}
+#catContainer p {
+  font-family: "Concert One", cursive;
+}
 .appDescription {
-     text-align: center;
-  }
+  text-align: center;
+}
 
-  .logo {
-      display: inline-block;
-      height: 100%;
-  }
-  
-  .logo>img {
-      vertical-align: middle;
-  }
-  
-  .modal {
-      color: black;
-  }
-  
-  #catContainer img {
-      width: 100%;
-  }
-  
-  .cityInput {
-      background-color: lightgray;
-  }
-  
-  .hidden {
-      display: none;
-  }
+.logo {
+  display: inline-block;
+  height: 100%;
+}
 
-  #recipeContainer img {
-       width: 100%;
-  }
+.logo > img {
+  vertical-align: middle;
+}
+
+.modal {
+  color: black;
+}
+
+#catContainer img {
+  width: 100%;
+}
+
+.cityInput {
+  background-color: lightgray;
+}
+
+.hidden {
+  display: none;
+}
+
+#recipeContainer img {
+  width: 100%;
+}
