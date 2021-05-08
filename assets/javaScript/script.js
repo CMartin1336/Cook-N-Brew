@@ -42,11 +42,12 @@ function cardClickHandler(event) {
 
 // Handle clicks for brewery
 function breweryClickHandler(event) {
+     localStorage.setItem("breweryCity", city.value);
      var requrl = urlBreweries + city.value;
      fetchData(requrl,"brewery");
 }
 
-// Display Breweries in the modal - just one for MVP (more if time)
+// Display Breweries in the modal 
 function displayBreweries(data) {
     var tableBody = document.getElementById("tblBody");
      tableBody.innerHTML = "";
@@ -54,9 +55,7 @@ function displayBreweries(data) {
      for (var i = 0; i<4; i++){
 
           var breweryObj = data[i];    
-          console.log(data[i].name)
           var address = data[i].street + ", " + data[i].state + " " + data[i].postal_code;
-
           var tblTR = document.createElement("tr");
           var tblTDName = document.createElement("td");
           var tblTDAddress = document.createElement("td");
@@ -70,7 +69,7 @@ function displayBreweries(data) {
      }
 }
 
-// Display food categories, omit categories that had a small number of recipes 
+// Display food categories, leaving out ones that had a small number of recipes 
 function buildCategories(data) {
 
      for (var i = 0; i < 14; i++) {
@@ -93,8 +92,9 @@ function buildCategories(data) {
      }
 }
 
-// Display recipe cards 3x3
+// Display recipe cards 3x3 in main container
 function displayRecipeCards(data) {
+
      for (var i = 0; i < 9; i++) {
                var img = document.getElementById("img" + i.toString());
                img.setAttribute("src", data.meals[i].strMealThumb);
