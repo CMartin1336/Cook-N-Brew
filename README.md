@@ -64,6 +64,6 @@ This application was built with the idea of wanting to prepare a home-cooked mea
 
 ## **Links** 
 ---------------
-- [GitHub Repo Hosted By CSMartin1336](https://github.com/CMartin1336/Cook-N-Brew)
+- [GitHub Repo Hosted By CMartin1336](https://github.com/CMartin1336/Cook-N-Brew)
 
 - [GitHub Deployed Link](https://cmartin1336.github.io/Cook-N-Brew/)

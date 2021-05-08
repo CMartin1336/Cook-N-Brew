@@ -48,26 +48,26 @@ function breweryClickHandler(event) {
 
 // Display Breweries in the modal - just one for MVP (more if time)
 function displayBreweries(data) {
+    var tableBody = document.getElementById("tblBody");
+     tableBody.innerHTML = "";
 
-     var breweryObj = data[0];    
+     for (var i = 0; i<4; i++){
 
-     for (x in breweryObj) {
-          if (x.includes("name")){
-               var name = breweryObj[x];
-          } else if (x.includes("street")) {
-               var street = breweryObj[x];
-          } else if (x.includes("state")) {
-               var state = breweryObj[x];
-          } else if (x.includes("postal_code")) {
-               var postal_code = breweryObj[x];
-          } else if (x.includes("brewery_type")) {
-               var brewery_type = breweryObj[x];
-          }
+          var breweryObj = data[i];    
+          console.log(data[i].name)
+          var address = data[i].street + ", " + data[i].state + " " + data[i].postal_code;
+
+          var tblTR = document.createElement("tr");
+          var tblTDName = document.createElement("td");
+          var tblTDAddress = document.createElement("td");
+          
+          tblTDName.textContent = data[i].name;
+          tblTDAddress.textContent = address;
+
+          tblTR.appendChild(tblTDName);
+          tblTR.appendChild(tblTDAddress);
+          tableBody.appendChild(tblTR);
      }
-     var address = street + ", " + state + " " + postal_code;
-     var table = document.getElementById('tblBreweries');
-     table.rows[1].cells[0].innerHTML = name;
-     table.rows[1].cells[1].innerHTML = address;
 }
 
 // Display food categories, omit categories that had a small number of recipes 
@@ -95,23 +95,17 @@ function buildCategories(data) {
 
 // Display recipe cards 3x3
 function displayRecipeCards(data) {
-
      for (var i = 0; i < 9; i++) {
-
-          // Set the image on each card
                var img = document.getElementById("img" + i.toString());
                img.setAttribute("src", data.meals[i].strMealThumb);
                img.setAttribute("alt", data.meals[i].strMeal);
 
-               // Set the recipe ID on each card
                var parent = document.getElementById("card" + i.toString()).parentElement;
                parent.setAttribute("id", data.meals[i].idMeal);
 
-               // Set the recipe name for each card
                var span = document.getElementById("cardspan" + i.toString());
                span.textContent = data.meals[i].strMeal;
 
-               // Set recipe ID on button
                var button = document.getElementById("button" + i.toString());
                button.setAttribute("data-card", data.meals[i].idMeal);
      }
@@ -132,27 +126,22 @@ function displayRecipe(data) {
      var ingredient = [];
      var i=0;
      var j=0;
-
-     // Clear ingredients
      var ingredients = document.querySelector('#ingredients');
+
      clearRecipeIngredients(ingredients);
 
-     // Hide card container, display recipe container
      var cardContainer = document.getElementById('cardContainer');
      var recipeContainer = document.getElementById('recipeContainer');
      cardContainer.classList.add("hidden");
      recipeContainer.classList.remove("hidden")
      
-     // Display recipe name
      var name = document.getElementById("recipeName");
      name.textContent = mealObj.strMeal;
 
-     // Display recipe Image
      var img = document.getElementById("recipeImg");
      img.setAttribute("src", mealObj.strMealThumb);
      img.setAttribute("alt", mealObj.strMeal);
      
-     // Display ingredients (Loop through object to find them all)
      for (x in mealObj) {
           if (x.includes("strIngredient") && mealObj[x] !== null  && mealObj[x] !== "" && mealObj[x] !== " "  ) {
                ingredient[i] = mealObj[x];
@@ -162,14 +151,12 @@ function displayRecipe(data) {
                j++;
           }
      }
-     // Join the measurement and ingredient together 
      for (var k=0; k< measure.length; k++) {
           var strIngredient = measure[k] + " " + ingredient[k];
           var p = document.createElement('p');
           p.textContent = strIngredient;
           ingredients.appendChild(p);
      }
-     // Display instructions
      var pinstructions = document.getElementById("instructions");
      pinstructions.textContent = mealObj.strInstructions;
 }
@@ -186,11 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
      var instances = M.Modal.init(elems,);
    });
 
-// Listener for category clicks (i.e. chicken, beef, etc.)
+// Listeners 
 catContainerEl.addEventListener('click', categoryClickHandler);
-
-// Listener for clicks to display recipes from the cards
 cardContainerEl.addEventListener('click', cardClickHandler)
-
-// Listener for clicks to display recipes from the cards
 breweryContainerEl.addEventListener('click', breweryClickHandler)
